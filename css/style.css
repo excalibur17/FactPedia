@@ -1,3 +1,4 @@
+/* Mengatur gaya umum untuk seluruh halaman */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,21 +6,66 @@ body {
     background-color: #f4f4f4;
 }
 
-h1, h2 {
+/* Mengatur gaya untuk header (judul) */
+h1 {
     color: #333;
+    text-align: center;
+    margin-top: 20px;
 }
 
+/* Mengatur gaya untuk paragraf */
+p {
+    text-align: center;
+    color: #666;
+}
+
+/* Mengatur gaya untuk daftar anggota */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+ul li {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+/* Mengatur gaya untuk link */
 a {
     text-decoration: none;
     color: #333;
 }
 
+/* Mengatur gaya untuk form, input, textarea, dan button (jika ada form) */
 form {
     margin: 20px;
 }
 
 input, textarea, button {
     display: block;
-    margin: 10px 0;
+    width: calc(100% - 20px);
+    margin: 10px auto;
     padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
 }

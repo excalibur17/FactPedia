@@ -2,20 +2,22 @@
 include 'connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+    // Hash password sebelum disimpan ke database
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashed_password')";
+
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        echo "Registration successful!";
+        // Redirect ke halaman login atau halaman lain
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
-?>
 
-<form method="post">
-    Username: <input type="text" name="username" required>
-    Password: <input type="password" name="password" required>
-    <button type="submit">Register</button>
-</form>
+$conn->close();
+?>
