@@ -1,0 +1,20 @@
+/article_web
+  /css
+    style.css
+  /js
+    script.js
+  /php
+    connect.php
+    login.php
+    logout.php
+    register.php
+    add_article.php
+    edit_article.php
+    delete_article.php
+    view_article.php
+    manage_articles.php
+  /static
+    about.html
+  index.php
+  login.php
+  register.php
