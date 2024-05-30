@@ -1,0 +1,234 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background: #007BFF;
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+nav {
+    position: relative;
+}
+
+.nav-menu {
+    position: relative;
+}
+
+.nav-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+}
+
+#navMenu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#navMenu.show {
+    display: block;
+}
+
+#navMenu li {
+    list-style: none;
+}
+
+#navMenu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #007BFF;
+    transition: background 0.3s, color 0.3s;
+}
+
+#navMenu li a:hover {
+    background: #007BFF;
+    color: white;
+}
+
+/* Sidebar Styles */
+.admin-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+aside {
+    width: 20%;
+    background: #333; /* Change sidebar background to black */
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    color: white; /* Change text color to white */
+}
+
+aside ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    display: block;
+    padding: 10px;
+    color: white; /* Change link color to white */
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+aside ul li a:hover,
+aside ul li a.active {
+    background: #007BFF;
+    color: white;
+}
+
+/* Main Content Styles */
+main {
+    width: 80%;
+    padding: 20px;
+}
+
+main h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.stats {
+    background: #007BFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.posts, .users, .settings {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    margin-bottom: 20px;
+}
+
+.stat-box h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.stat-box p {
+    font-size: 2em;
+    margin: 0;
+    color: white;
+}
+
+.btn-add {
+    background: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-add:hover {
+    background: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #f8f9fa;
+}
+
+tr:nth-child(even) {
+    background: #f4f4f4;
+}
+
+button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+    background: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+footer p {
+    margin: 0;
+}
