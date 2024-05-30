@@ -1,5 +1,5 @@
 <?php
-include 'proses/connect.php';
+include 'connect.php';
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if (password_verify($hashed_password, $row['password'])) {
             $_SESSION['user_id'] = $row['id'];
-            header("Location: index.php");
+            header("Location: add_article.php");
         } else {
             echo "Invalid password";
         }

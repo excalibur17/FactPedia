@@ -7,30 +7,48 @@ $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Article Web</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Web Artikel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Article Web</h1>
-    <?php if(isset($_SESSION['user_id'])): ?>
-        <a href="proses/add_article.php">Add Article</a> |
-        <a href="proses/logout.php">Logout</a>
-    <?php else: ?>
-        <a href="proses/login.php">Login</a> |
-        <a href="proses/register.php">Register</a>
-    <?php endif; ?>
-    
-    <h2>Articles</h2>
-    <ul>
-        <?php while($row = $result->fetch_assoc()): ?>
-            <li>
-                <h3><?php echo $row['title']; ?></h3>
-                <p><?php echo $row['content']; ?></p>
-            </li>
-        <?php endwhile; ?>
-    </ul>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>FactPedia</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="proses/view_article.php">Read</a></li>
+                    <li><a href="static/about.php">About</a></li>
+                    <li><a href="proses/login.php">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="content">
+            <h2>Selamat Datang</h2>
+            <p>Selamat datang di <strong>Web Artikel</strong>, platform yang dirancang untuk 
+                para penulis dan pembaca yang penuh semangat! Di sini, Anda dapat menemukan 
+                berbagai artikel yang menginspirasi, informatif, dan menghibur. Kami berkomitmen 
+                untuk menyediakan tempat bagi setiap suara yang ingin didengar, baik Anda seorang 
+                penulis berpengalaman maupun seorang pemula yang baru memulai perjalanan menulis Anda.
+            </p>
+        </section>
+        <section class="picture">
+            <img src="img/grayscale.png"alt="Picture">
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Web Artikel. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -7,8 +7,20 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
-        <h1>About Us</h1>
+<header>
+        <div class="container">
+            <div class="logo">
+                <h1>FactPedia</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="../proses/view_article.php">Read</a></li>
+                    <li><a href="../static/about.php">About</a></li>
+                    <li><a href="../proses/login.php">Login</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <p>Informasi tentang anggota-anggota kelompok.</p>
