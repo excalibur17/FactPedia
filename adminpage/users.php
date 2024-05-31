@@ -27,18 +27,19 @@
     <div class="admin-container">
         <aside>
             <ul>
-                <li><a href="admin.php">Dashboard</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="posts.php">Posts</a></li>
                 <li><a href="users.php" class="active">Users</a></li>
             </ul>
         </aside>
         <main>
             <h2>Users</h2>
-            <button class="btn-add">Add New User</button>
             <section class="users">
+                <button class="btn-add">Add New User</button>
                 <table>
                     <thead>
                         <tr>
+                            <th>No.</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
@@ -48,6 +49,7 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <td>1</td>
                             <td>User 1</td>
                             <td>user1@example.com</td>
                             <td>Admin</td>
@@ -72,11 +74,6 @@
             </section>
         </main>
     </div>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Web Artikel. All rights reserved.</p>
-        </div>
-    </footer>
     <script>
         document.getElementById('navToggle').addEventListener('click', function() {
             document.getElementById('navMenu').classList.toggle('show');

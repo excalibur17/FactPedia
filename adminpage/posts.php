@@ -1,9 +1,7 @@
 <?php
 include 'function/connect.php';
+include 'function/func.php';
 
-// Mengambil data yang masih berstatus pending untuk ditampilkan di post admin
-$sql = "SELECT * FROM trivias WHERE status = 'pending'";
-$result_adm = $conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +34,7 @@ $result_adm = $conn->query($sql);
     <div class="admin-container">
         <aside>
             <ul>
-                <li><a href="admin.php">Dashboard</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="posts.php" class="active">Posts</a></li>
                 <li><a href="users.php">Users</a></li>
             </ul>
@@ -69,14 +67,14 @@ $result_adm = $conn->query($sql);
                                 <td><?php echo htmlspecialchars($row['author']); ?></td>
                                 <td><?php echo htmlspecialchars($row['title']); ?></td>
                                 <td><?php echo htmlspecialchars($row['category']); ?></td>
-                                <td id="col-content"><?php echo htmlspecialchars($row['description']); ?></td>
+                                <td id="col-content"><?php echo htmlspecialchars($row['content']); ?></td>
                                 <td><?php echo htmlspecialchars((new DateTime($row['created_at']))->format('Y-m-d')); ?></td>
                                 <td><?php echo htmlspecialchars($row['status']); ?></td>
                                 <td>
-                                    <button class="btn-action">View</button>
-                                    <button class="btn-action">Accept</button>
-                                    <button class="btn-action">Edit</button>
-                                    <button class="btn-action">Delete</button>
+                                    <button class="btn-action btn-blue">View</button>
+                                    <button class="btn-action btn-green">Accept</button>
+                                    <button class="btn-action btn-yellow">Edit</button>
+                                    <button class="btn-action btn-red">Reject</button>
                                 </td>
                             </tr>
                         <?php } ?>
