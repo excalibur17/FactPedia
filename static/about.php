@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article Cards</title>
     <link rel="stylesheet" href="../css/about.css">
+
 </head>
 <body>
     <header>
@@ -26,45 +27,69 @@
         <div class="container article-grid">
             <div class="article-card">
                 <div class="article-image">
-                    <img src="../img/heski.jpg" alt="picture">
+                    <img src="../img/HESKI1.jpg" alt="picture">
                 </div>
                 <div class="article-content">
-                    <p class="article-date">04 Februari 2024 / Sport</p>
-                    <h2 class="article-title">The Reds, The Biggest Club In England!</h2>
-                    <p class="article-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum provident ullam quis cum quas numquam! Molestias...</p>
+                    <h2 class="article-title">Heski Pranata</h2>
+                    <p class="article-excerpt">
+                        Age: 20 <br>
+                        Status: Student <br>
+                        <span class="hidden"> University: Sam Ratulangi University <br>
+                        Major: informatics Engineering <br>
+                        Hobby: nonton bokep <br>
+                        Favorite Club: Liverpool FC </span>
+                    </p>
                     <a href="#" class="read-more">Read More</a>
                 </div>
             </div>
             <div class="article-card">
                 <div class="article-image">
-                    <img src="../img/Arthur.jpg" alt="Picture">
+                    <img src="../img/irham.jpg" alt="Picture">
                 </div>
                 <div class="article-content">
-                    <p class="article-date">05 Februari 2024 / Sport</p>
-                    <h2 class="article-title">Another Great Club!</h2>
-                    <p class="article-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum provident ullam quis cum quas numquam! Molestias...</p>
+                    <h2 class="article-title">Irham F. Hamid</h2>
+                    <p class="article-excerpt">
+                        Age: 20 <br>
+                        Status: Student <br>
+                        <span class="hidden"> University: Sam Ratulangi University <br>
+                        Major: informatics Engineering <br>
+                        Hobby: nonton bokep <br>
+                        Favorite Club: Liverpool FC </span>
+                    </p>
                     <a href="#" class="read-more">Read More</a>
                 </div>
             </div>
             <div class="article-card">
                 <div class="article-image">
-                    <img src="../img/joy.jpg" alt="Yet Another Logo">
+                    <img src="../img/JOY1.jpg" alt="Yet Another Logo">
                 </div>
                 <div class="article-content">
-                    <p class="article-date">06 Februari 2024 / Sport</p>
-                    <h2 class="article-title">Yet Another Great Club!</h2>
-                    <p class="article-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum provident ullam quis cum quas numquam! Molestias...</p>
+                    <h2 class="article-title">Joy O.S. Tambuwun</h2>
+                    <p class="article-excerpt">
+                        Age: 20 <br>
+                        Status: Student <br>
+                        <span class="hidden"> University: Sam Ratulangi University <br>
+                        Major: informatics Engineering <br>
+                        Hobby: nonton bokep <br>
+                        Favorite Club: Liverpool FC </span>
+                    </p>
                     <a href="#" class="read-more">Read More</a>
                 </div>
             </div>
             <div class="article-card">
                 <div class="article-image">
-                    <img src="../img/irham.jpg" alt="And Another Logo">
+                    <img src="../img/Arthur.jpg" alt="And Another Logo">
                 </div>
                 <div class="article-content">
-                    <p class="article-date">07 Februari 2024 / Sport</p>
-                    <h2 class="article-title">And Another Great Club!</h2>
-                    <p class="article-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum provident ullam quis cum quas numquam! Molestias...</p>
+                    <h2 class="article-title">Arthur M. Unsong</h2>
+                    <p class="article-excerpt">
+                        Age: 20 <br>
+                        Status: Student <br>
+                        <span class="hidden"> University: Sam Ratulangi University <br>
+                        Major: informatics Engineering <br>
+                        Hobby: nonton bokep <br>
+                        Favorite Club: Liverpool FC </span>
+                    </p>
                     <a href="#" class="read-more">Read More</a>
                 </div>
             </div>
@@ -73,5 +98,20 @@
     <footer>
         <p>&copy; 2024 Kelompok Kami. All rights reserved.</p>
     </footer>
+    <script>
+        document.querySelectorAll('.read-more').forEach(button => {
+            button.addEventListener('click', event => {
+                event.preventDefault();
+                const hiddenContent = button.previousElementSibling.querySelector('.hidden');
+                if (hiddenContent.style.display === 'none' || !hiddenContent.style.display) {
+                    hiddenContent.style.display = 'inline';
+                    button.textContent = 'Read Less';
+                } else {
+                    hiddenContent.style.display = 'none';
+                    button.textContent = 'Read More';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

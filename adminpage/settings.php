@@ -27,9 +27,9 @@
     <div class="admin-container">
         <aside>
             <ul>
-                <li><a href="admin.html">Dashboard</a></li>
-                <li><a href="posts.html">Posts</a></li>
-                <li><a href="users.html">Users</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="posts.php">Posts</a></li>
+                <li><a href="users.php">Users</a></li>
             </ul>
         </aside>
         <main>

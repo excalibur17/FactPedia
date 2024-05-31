@@ -55,7 +55,7 @@ $result = $conn->query($sql);
             </div>
         </section>
         <div class="add-article-button">
-            <a href="add_article.php" id="open-form-btn" class="add-article-link">+</a>
+            <a href="upload.php" id="open-form-btn" class="add-article-link">+</a>
         </div>
     </main>
     <footer>
