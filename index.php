@@ -2,7 +2,7 @@
 include 'proses/connect.php';
 session_start();
 
-$sql = "SELECT * FROM articles";
+$sql = "SELECT * FROM trivias";
 $result = $conn->query($sql);
 ?>
 

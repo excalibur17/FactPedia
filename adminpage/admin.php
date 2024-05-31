@@ -17,7 +17,7 @@
                 <div class="nav-menu">
                     <button class="nav-toggle" id="navToggle">&#9776;</button>
                     <ul id="navMenu">
-                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="settings.php">Settings</a></li>
                         <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </div>
@@ -27,9 +27,9 @@
     <div class="admin-container">
         <aside>
             <ul>
-                <li><a href="admin.html" class="active">Dashboard</a></li>
-                <li><a href="posts.html">Posts</a></li>
-                <li><a href="users.html">Users</a></li>
+                <li><a href="admin.php" class="active">Dashboard</a></li>
+                <li><a href="posts.php">Posts</a></li>
+                <li><a href="users.php">Users</a></li>
             </ul>
         </aside>
         <main>
