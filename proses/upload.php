@@ -13,6 +13,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = $_POST['title'];
     $category = $_POST['category'];
     $description = $_POST['description'];
+    $user_id = $_SESSION['user_id'];
+
+    //Mendapatkan nama dari user dengan id
+    $sql_query = "SELECT * FROM users WHERE id = $user_id";
+    $result = $conn->query($sql_query);
+    if ($result->num_rows > 0) {
+        $user_data = $result->fetch_assoc();
+        $author = $user_data['name']; 
+    } else {
+        $author = "Unknown";
+    }
 
     // Proses upload file
     $target_dir = "uploads/";
@@ -53,8 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Jika semuanya baik-baik saja, coba upload file
     } else {
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-            $sql = "INSERT INTO trivias (title, category, description, file_path, status)
-                    VALUES ('$title', '$category', '$description', '$target_file', 'pending')";
+            $sql = "INSERT INTO trivias (user_id, author, title, category, description, file_path, status)
+                    VALUES ('$user_id', '$author', '$title', '$category', '$description', '$target_file', 'pending')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "<script>
@@ -81,7 +92,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Article</title>
-    <link rel="stylesheet" href="../css/add.css">
+    <link rel="stylesheet" href="../css/upload.css">
 </head>
 
 <body>
@@ -92,7 +103,7 @@ $conn->close();
             </div>
             <button class="btn-close" onclick="redirectToIndex()">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                    <path fill="#0c5de9" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                    <path fill="#512da8" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
                 </svg>
             </button>
         </div>

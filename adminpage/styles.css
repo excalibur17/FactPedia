@@ -12,9 +12,8 @@ a {
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
+    padding: 7px 40px;
+
 }
 
 /* Header Styles */
@@ -89,16 +88,23 @@ nav {
 /* Sidebar Styles */
 .admin-container {
     display: flex;
-    margin-top: 20px;
+    margin-left: 12%; /* Adjust margin to accommodate the fixed sidebar */
+    padding: 20px;
+    flex-grow: 1;
 }
 
 aside {
-    width: 20%;
-    background: #333; /* Change sidebar background to black */
+    width: 12%;
+    height: 100vh;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    background: #333;
     border-right: 1px solid #ddd;
-    padding: 20px;
+    padding: 100px 20px 20px 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    color: white; /* Change text color to white */
+    color: white;
+    overflow-y: auto; 
 }
 
 aside ul {
@@ -127,12 +133,13 @@ aside ul li a.active {
 
 /* Main Content Styles */
 main {
-    width: 80%;
-    padding: 20px;
+    width: 100%;
+    padding: 10px 0 0 50px;
 }
 
 main h2 {
     font-size: 2em;
+    padding-top: 0;
     margin-bottom: 20px;
 }
 
@@ -189,20 +196,28 @@ table {
 }
 
 table, th, td {
+    vertical-align: top;
     border: 1px solid #ddd;
 }
 
-th, td {
-    padding: 10px;
+td {
+    padding: 10px 2px 10px 10px;
     text-align: left;
+    font-size: 12px;
 }
 
 th {
     background: #f8f9fa;
+    padding: 10px 5px 10px 10px;
+    text-align: left;
 }
 
 tr:nth-child(even) {
     background: #f4f4f4;
+}
+
+#col-content{
+    max-width: 350px;
 }
 
 button {
@@ -213,7 +228,10 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
+    font-size: 12px;
 }
+
+
 
 button:hover {
     background: #0056b3;

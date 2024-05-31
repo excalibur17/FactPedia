@@ -1,5 +1,13 @@
+<?php
+include 'function/connect.php';
+
+// Mengambil data yang masih berstatus pending untuk ditampilkan di post admin
+$sql = "SELECT * FROM trivias WHERE status = 'pending'";
+$result_adm = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -39,54 +48,49 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Title</th>
+                            <th>No</th>
                             <th>Author</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Content</th>
+                            <th>Date</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- Contoh data post -->
-                        <tr>
-                            <td>1</td>
-                            <td>Post Title 1</td>
-                            <td>Author 1</td>
-                            <td>Pending</td>
-                            <td>
-                                <button class="btn-action">View</button>
-                                <button class="btn-action">Accept</button>
-                                <button class="btn-action">Edit</button>
-                                <button class="btn-action">Delete</button> 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Post Title 2</td>
-                            <td>Author 2</td>
-                            <td>Approved</td>
-                            <td>
-                                <button class="btn-action">View</button>
-                                <button class="btn-action">Accept</button>
-                                <button class="btn-action">Edit</button>
-                                <button class="btn-action">Delete</button> <!-- Tambahkan tombol Accept -->
-                            </td>
-                        </tr>
-                        <!-- Tambahkan data post lainnya di sini -->
+                        <?php 
+                        $i = 1;
+                         ?>
+                        <?php while ($row = $result_adm->fetch_assoc()) { ?>
+                            <tr>
+                                <td><?php echo $i++ ."."?></td>
+                                <td><?php echo htmlspecialchars($row['author']); ?></td>
+                                <td><?php echo htmlspecialchars($row['title']); ?></td>
+                                <td><?php echo htmlspecialchars($row['category']); ?></td>
+                                <td id="col-content"><?php echo htmlspecialchars($row['description']); ?></td>
+                                <td><?php echo htmlspecialchars((new DateTime($row['created_at']))->format('Y-m-d')); ?></td>
+                                <td><?php echo htmlspecialchars($row['status']); ?></td>
+                                <td>
+                                    <button class="btn-action">View</button>
+                                    <button class="btn-action">Accept</button>
+                                    <button class="btn-action">Edit</button>
+                                    <button class="btn-action">Delete</button>
+                                </td>
+                            </tr>
+                        <?php } ?>
+
                     </tbody>
                 </table>
             </section>
         </main>
     </div>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Web Artikel. All rights reserved.</p>
-        </div>
-    </footer>
     <script>
         document.getElementById('navToggle').addEventListener('click', function() {
             document.getElementById('navMenu').classList.toggle('show');
         });
     </script>
 </body>
+
 </html>
