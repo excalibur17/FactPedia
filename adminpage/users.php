@@ -1,5 +1,10 @@
+<?php
+require './function/connect.php';
+require './function/func.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -48,17 +54,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php $i = 1; ?>
+                        <?php while($row = $get_user->fetch_assoc()) {?>
                         <tr>
-                            <td>1</td>
-                            <td>User 1</td>
-                            <td>user1@example.com</td>
-                            <td>Admin</td>
+                            <td><?php echo $i++ ?></td>
+                            <td><?php echo htmlspecialchars($row['name']) ?></td>
+                            <td><?php echo htmlspecialchars($row['email'])?></td>
+                            <td>Hacker</td>
                             <td>Active</td>
                             <td>
                                 <button>Edit</button>
-                                <button>Delete</button>
+                                <button class="btn-red">Delete</button>
                             </td>
                         </tr>
+                        <?php }?>
                         <tr>
                             <td>User 2</td>
                             <td>user2@example.com</td>
@@ -80,4 +89,5 @@
         });
     </script>
 </body>
+
 </html>

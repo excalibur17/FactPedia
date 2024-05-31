@@ -210,11 +210,12 @@ td {
     padding: 10px 2px 10px 10px;
     text-align: left;
     font-size: 12px;
+    font-family: "Montserrat", sans-serif;
 }
 
 th {
     background: #f8f9fa;
-    padding: 10px 5px 10px 10px;
+    padding: 10px 10px 10px 10px;
     text-align: left;
 }
 
@@ -223,7 +224,7 @@ tr:nth-child(even) {
 }
 
 #col-content{
-    max-width: 350px;
+    max-width: 300px;
 }
 
 button {
