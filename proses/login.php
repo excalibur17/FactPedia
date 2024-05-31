@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if (password_verify($hashed_password, $row['password'])) {
             $_SESSION['user_id'] = $row['id'];
-            header("Location: add_article.php");
+            header("Location: upload.php");
         } else {
             echo "Invalid password";
         }
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form action="proses/register.php" method="POST">
+            <form action="register.php" method="POST">
                 <h1>Create Account</h1>
                 <span>or use your email for registration</span>
                 <input type="text" name="name" placeholder="Name" required>
