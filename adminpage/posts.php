@@ -11,7 +11,7 @@ include 'function/func.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Posts</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@ include 'function/func.php';
         <main>
             <h2>Manage Posts</h2>
             <section class="posts">
-                <button class="btn-add">Add New Post</button>
+                <a href="upload.php" class="btn-add">Add New Post</a>
                 <table>
                     <thead>
                         <tr>
