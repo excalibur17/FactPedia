@@ -1,6 +1,9 @@
 <?php
 require './function/connect.php';
 require './function/func.php';
+
+// Fetch users data
+$get_user = $conn->query("SELECT * FROM users");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +44,7 @@ require './function/func.php';
         <main>
             <h2>Users</h2>
             <section class="users">
-                <button class="btn-add">Add New User</button>
+                <button class="btn-add" onclick="addUser()">Add New User</button>
                 <table>
                     <thead>
                         <tr>
@@ -63,21 +66,10 @@ require './function/func.php';
                             <td>Hacker</td>
                             <td>Active</td>
                             <td>
-                                <button>Edit</button>
-                                <button class="btn-red">Delete</button>
+                                <button onclick="editUser(<?php echo $row['id']; ?>)">Edit</button>
+                                <button class="btn-red" onclick="deleteUser(<?php echo $row['id']; ?>)">Delete</button>
                             </td>
-                        </tr>
                         <?php }?>
-                        <tr>
-                            <td>User 2</td>
-                            <td>user2@example.com</td>
-                            <td>Writer</td>
-                            <td>Inactive</td>
-                            <td>
-                                <button>Edit</button>
-                                <button>Delete</button>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </section>
@@ -87,6 +79,20 @@ require './function/func.php';
         document.getElementById('navToggle').addEventListener('click', function() {
             document.getElementById('navMenu').classList.toggle('show');
         });
+
+        function addUser() {
+            window.location.href = 'add_user.php';
+        }
+
+        function editUser(id) {
+            window.location.href = 'edit_user.php?id=' + id;
+        }
+
+        function deleteUser(id) {
+            if (confirm('Are you sure you want to delete this user?')) {
+                window.location.href = 'delete_user.php?id=' + id;
+            }
+        }
     </script>
 </body>
 
