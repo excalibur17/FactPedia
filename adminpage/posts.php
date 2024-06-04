@@ -2,6 +2,8 @@
 include 'function/connect.php';
 include 'function/func.php';
 
+// Fetch posts data
+$result_adm = $conn->query("SELECT * FROM trivias");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,13 +59,11 @@ include 'function/func.php';
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Contoh data post -->
                         <?php 
                         $i = 1;
-                         ?>
-                        <?php while ($row = $result_adm->fetch_assoc()) { ?>
+                        while ($row = $result_adm->fetch_assoc()) { ?>
                             <tr>
-                                <td><?php echo $i++ ."."?></td>
+                                <td><?php echo $i++ . "."; ?></td>
                                 <td><?php echo htmlspecialchars($row['author']); ?></td>
                                 <td><?php echo htmlspecialchars($row['title']); ?></td>
                                 <td><?php echo htmlspecialchars($row['category']); ?></td>
@@ -71,14 +71,13 @@ include 'function/func.php';
                                 <td><?php echo htmlspecialchars((new DateTime($row['created_at']))->format('Y-m-d')); ?></td>
                                 <td><?php echo htmlspecialchars($row['status']); ?></td>
                                 <td>
-                                    <button class="btn-action btn-blue">View</button>
-                                    <button class="btn-action btn-green">Accept</button>
-                                    <button class="btn-action btn-yellow">Edit</button>
-                                    <button class="btn-action btn-red">Reject</button>
+                                    <button class="btn-action btn-blue" onclick="viewPost(<?php echo $row['id']; ?>)">View</button>
+                                    <button class="btn-action btn-green" onclick="acceptPost(<?php echo $row['id']; ?>)">Accept</button>
+                                    <button class="btn-action btn-yellow" onclick="editPost(<?php echo $row['id']; ?>)">Edit</button>
+                                    <button class="btn-action btn-red" onclick="rejectPost(<?php echo $row['id']; ?>)">Reject</button>
                                 </td>
                             </tr>
                         <?php } ?>
-
                     </tbody>
                 </table>
             </section>
@@ -88,6 +87,26 @@ include 'function/func.php';
         document.getElementById('navToggle').addEventListener('click', function() {
             document.getElementById('navMenu').classList.toggle('show');
         });
+
+        function viewPost(id) {
+            window.location.href = 'view_post.php?id=' + id;
+        }
+
+        function acceptPost(id) {
+            if (confirm('Are you sure you want to accept this post?')) {
+                window.location.href = 'accept_post.php?id=' + id;
+            }
+        }
+
+        function editPost(id) {
+            window.location.href = 'edit_post.php?id=' + id;
+        }
+
+        function rejectPost(id) {
+            if (confirm('Are you sure you want to reject this post?')) {
+                window.location.href = 'reject_post.php?id=' + id;
+            }
+        }
     </script>
 </body>
 
