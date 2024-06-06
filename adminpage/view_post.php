@@ -57,7 +57,7 @@ $conn->close();
                     <p><strong>Category:</strong> <?php echo htmlspecialchars($post['category']); ?></p>
                     <?php if (!empty($post['file_path'])): ?>
                         <div class="post-image">
-                            <img src="<?php echo htmlspecialchars($post['file_path']); ?>" alt="Post Image">
+                            <img src="<?php echo "../proses/".htmlspecialchars($post['file_path']); ?>" alt="Post Image">
                         </div>
                     <?php endif; ?>
                     <p><strong>Content:</strong> <?php echo nl2br(htmlspecialchars($post['content'])); ?></p>
