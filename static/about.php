@@ -83,12 +83,12 @@
                 <div class="article-content">
                     <h2 class="article-title">Arthur M. Unsong</h2>
                     <p class="article-excerpt">
-                        Age: 20 <br>
+                        Age: 19 <br>
                         Status: Student <br>
                         <span class="hidden"> University: Sam Ratulangi University <br>
                         Major: informatics Engineering <br>
-                        Hobby: nonton bokep <br>
-                        Favorite Club: Liverpool FC </span>
+                        Hobby: Game and sport <br>
+                        Favorite Club: Manchester City </span>
                     </p>
                     <a href="#" class="read-more">Read More</a>
                 </div>

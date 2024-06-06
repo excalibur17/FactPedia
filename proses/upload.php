@@ -12,7 +12,7 @@ $message = ""; // Initialize the message variable
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = $_POST['title'];
     $category = $_POST['category'];
-    $description = $_POST['description'];
+    $content = $_POST['content'];
     $user_id = $_SESSION['user_id'];
 
     //Mendapatkan nama dari user dengan id
@@ -64,8 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Jika semuanya baik-baik saja, coba upload file
     } else {
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-            $sql = "INSERT INTO trivias (user_id, author, title, category, description, file_path, status)
-                    VALUES ('$user_id', '$author', '$title', '$category', '$description', '$target_file', 'pending')";
+            $sql = "INSERT INTO trivias (user_id, author, title, category, content, file_path, status)
+                    VALUES ('$user_id', '$author', '$title', '$category', '$content', '$target_file', 'pending')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "<script>
@@ -123,7 +123,7 @@ $conn->close();
                     </select>
                 </div>
                 <div class="form-group">
-                    <textarea id="trivia-description" name="description" class="form-control" rows="3" placeholder="Describe your trivia here..." required></textarea>
+                    <textarea id="trivia-description" name="content" class="form-control" rows="3" placeholder="Describe your trivia here..." required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="file-upload" class="upload-area">

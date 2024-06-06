@@ -2,8 +2,8 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #e2e3e8, #f3f4f7);
-    color: #333;
+    background: aliceblue;
+    
 }
 
 a {
@@ -12,14 +12,14 @@ a {
 }
 
 .container {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #007BFF, #0056b3);
+    background: linear-gradient(to right, #8e44ad, #3498db);
     color: white;
     padding: 10px 0;
     position: sticky;
@@ -60,7 +60,6 @@ nav ul li a:hover {
     background: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
-
 /* Main Styles */
 main {
     padding: 20px;
