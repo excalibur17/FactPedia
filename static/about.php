@@ -3,24 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article Cards</title>
-    <link rel="stylesheet" href="../css/about.css">
+    <title>FactPedia</title>
+    <link rel="stylesheet" href="../css/styles.css">
 
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>FactPedia</h1>
+    <style>/* Main Styles */
+main {
+    padding: 20px;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-top: 100px;
+}
+
+.hidden {
+    display: none;
+}
+.article-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.article-image img {
+    width: 100%;
+    height: 450px;
+    display: block;
+}
+.article-content {
+    padding: 16px;
+}
+.read-more {
+    color: #007BFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.article-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.article-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.article-excerpt {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+    background: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+footer p {
+    margin: 0;
+}
+header {
+    background-color: #fff;
+}
+.logo {
+    color: black;
+}
+</style>
+<header>
+        <div class="nav container">
+            <a href="#" class="logo">Fact<span>Pedia</span></a>
+            <div class="nav-page">
+                <a href="../index.php">Home</a>
+                <a href="../index.php#read">Read</a>
+                <a href="#" class="write-link" id="write-link">Write</a>
+                <a href="../static/about.php">About</a>
+                <a href="../proses/login.php" class="login">Login</a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.php">Home</a></li>
-                    <li><a href="../proses/view_article.php">Read</a></li>
-                    <li><a href="../static/about.php">About</a></li>
-                    <li><a href="../proses/login.php">Login</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
     <main>
@@ -36,8 +120,8 @@
                         Status: Student <br>
                         <span class="hidden"> University: Sam Ratulangi University <br>
                         Major: informatics Engineering <br>
-                        Hobby: nonton bokep <br>
-                        Favorite Club: Liverpool FC </span>
+                        Hobby: Cooking <br>
+                        Favorite Club: Psm Makassar </span>
                     </p>
                     <a href="#" class="read-more">Read More</a>
                 </div>
@@ -49,12 +133,12 @@
                 <div class="article-content">
                     <h2 class="article-title">Irham F. Hamid</h2>
                     <p class="article-excerpt">
-                        Age: 20 <br>
+                        Age: 18 <br>
                         Status: Student <br>
                         <span class="hidden"> University: Sam Ratulangi University <br>
                         Major: informatics Engineering <br>
-                        Hobby: nonton bokep <br>
-                        Favorite Club: Liverpool FC </span>
+                        Hobby: Sering di sia-siakan <br>
+                        Favorite Club: FC Barcelona </span>
                     </p>
                     <a href="#" class="read-more">Read More</a>
                 </div>
@@ -66,12 +150,12 @@
                 <div class="article-content">
                     <h2 class="article-title">Joy O.S. Tambuwun</h2>
                     <p class="article-excerpt">
-                        Age: 20 <br>
+                        Age: 19 <br>
                         Status: Student <br>
                         <span class="hidden"> University: Sam Ratulangi University <br>
                         Major: informatics Engineering <br>
-                        Hobby: nonton bokep <br>
-                        Favorite Club: Liverpool FC </span>
+                        Hobby: Main Roblok sampai goblok <br>
+                        Favorite Club: sulut united </span>
                     </p>
                     <a href="#" class="read-more">Read More</a>
                 </div>
@@ -87,7 +171,7 @@
                         Status: Student <br>
                         <span class="hidden"> University: Sam Ratulangi University <br>
                         Major: informatics Engineering <br>
-                        Hobby: Game and sport <br>
+                        Hobby: main onet<br>
                         Favorite Club: Manchester City </span>
                     </p>
                     <a href="#" class="read-more">Read More</a>
@@ -111,6 +195,15 @@
                     button.textContent = 'Read More';
                 }
             });
+        });
+
+        document.getElementById('write-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            <?php if (isset($is_login) && $is_login) : ?>
+                window.location.href = '../proses/upload.php';
+            <?php else : ?>
+                window.location.href = '../proses/warning.php';
+            <?php endif; ?>
         });
     </script>
 </body>

@@ -17,49 +17,52 @@ a {
     padding: 15px;
 }
 
-/* Header Styles */
-header {
-    background: linear-gradient(to right, #8e44ad, #3498db);
-    color: white;
-    padding: 10px 0;
-    position: sticky;
+header{
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 200;
 }
 
-header .container {
+header.shadow{
+    background: var(--bg-color);
+    box-shadow: 0 1px 4px hsl(0 4% 14% / 10%);
+    transition: .5s;
+}
+
+header.shadow .logo{
+    color: var(--text-color);
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--bg-color);
+}
+
+.logo span{
+    color: #007BFF;
+}
+
+.nav-page {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
-.logo h1 {
-    margin: 0;
+.nav-page a{
+    color: #099de2;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background 0.3s, color 0.3s;
-}
-
-nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-}
 /* Main Styles */
 main {
     padding: 20px;
