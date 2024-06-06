@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FactPedia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../css/styles.css">
 
 </head>
@@ -94,6 +95,33 @@ header {
 .logo {
     color: black;
 }
+/* CSS untuk ikon media sosial */
+.article-content .hidden .fab.fa-facebook {
+    color: blue; /* Warna ikon Facebook */
+}
+
+.article-content .hidden .fab.fa-twitter {
+    color: blue; /* Warna ikon Twitter */
+}
+
+.article-content .hidden .fab.fa-instagram {
+    color: red; /* Warna ikon Instagram */
+}
+
+.article-content .hidden .fab {
+    display: inline-block; /* Membuat ikon media sosial tetap dalam kondisi span */
+    margin-right: 10px; /* Menambahkan jarak antara ikon-ikon */
+    font-size: 20px; /* Mengatur ukuran ikon */
+    transition: color 0.3s; /* Transisi warna saat dihover */
+    padding-top: 10px;
+}
+
+.article-content .hidden .fab:hover {
+    color: whitesmoke; /* Warna saat dihover */
+}
+
+
+
 </style>
 <header>
         <div class="nav container">
@@ -118,10 +146,18 @@ header {
                     <p class="article-excerpt">
                         Age: 20 <br>
                         Status: Student <br>
-                        <span class="hidden"> University: Sam Ratulangi University <br>
-                        Major: informatics Engineering <br>
-                        Hobby: Cooking <br>
-                        Favorite Club: Psm Makassar </span>
+                        <span class="hidden"> 
+                             University: Sam Ratulangi University <br>
+                             Major: informatics Engineering <br>
+                             Hobby: Cooking <br>
+                             Favorite Club: Psm Makassar<br>
+                               <!-- Icon media sosial -->
+                               <i class="fab fa-facebook"></i>
+                               <i class="fab fa-twitter"></i>
+                               <a href="https:ngoni p ig">
+                                    <i class="fab fa-instagram"></i>
+                               </a>
+                        </span>
                     </p>
                     <a href="#" class="read-more">Read More</a>
                 </div>
@@ -135,10 +171,18 @@ header {
                     <p class="article-excerpt">
                         Age: 18 <br>
                         Status: Student <br>
-                        <span class="hidden"> University: Sam Ratulangi University <br>
-                        Major: informatics Engineering <br>
-                        Hobby: Sering di sia-siakan <br>
-                        Favorite Club: FC Barcelona </span>
+                        <span class="hidden"> 
+                             University: Sam Ratulangi University <br>
+                             Major: informatics Engineering <br>
+                             Hobby: Cooking <br>
+                             Favorite Club: Fc Barcelona<br>
+                               <!-- Icon media sosial -->
+                               <i class="fab fa-facebook"></i>
+                               <i class="fab fa-twitter"></i>
+                               <a href="https:ngoni p ig">
+                                    <i class="fab fa-instagram"></i>
+                               </a>
+                        </span>
                     </p>
                     <a href="#" class="read-more">Read More</a>
                 </div>
@@ -152,10 +196,19 @@ header {
                     <p class="article-excerpt">
                         Age: 19 <br>
                         Status: Student <br>
-                        <span class="hidden"> University: Sam Ratulangi University <br>
-                        Major: informatics Engineering <br>
-                        Hobby: Main Roblok sampai goblok <br>
-                        Favorite Club: sulut united </span>
+                        <span class="hidden"> 
+                             University: Sam Ratulangi University <br>
+                             Major: informatics Engineering <br>
+                             Hobby: Cooking <br>
+                             Favorite Club: Sulut United<br>
+                               <!-- Icon media sosial -->
+                               <i class="fab fa-facebook"></i>
+                               <i class="fab fa-twitter"></i>
+                               <a href="https:ngoni p ig">
+                                    <i class="fab fa-instagram"></i>
+                               </a>
+
+                        </span>
                     </p>
                     <a href="#" class="read-more">Read More</a>
                 </div>
@@ -169,19 +222,25 @@ header {
                     <p class="article-excerpt">
                         Age: 19 <br>
                         Status: Student <br>
-                        <span class="hidden"> University: Sam Ratulangi University <br>
-                        Major: informatics Engineering <br>
-                        Hobby: main onet<br>
-                        Favorite Club: Manchester City </span>
+                        <span class="hidden"> 
+                             University: Sam Ratulangi University <br>
+                             Major: informatics Engineering <br>
+                             Hobby: Cooking <br>
+                             Favorite Club: Manchester City <br>
+                               <!-- Icon media sosial -->
+                               <i class="fab fa-facebook"></i>
+                               <i class="fab fa-twitter"></i>
+                               <a href="https://www.instagram.com/arthhhzzz_/#">
+                                    <i class="fab fa-instagram"></i>
+                               </a>
+
+                        </span>
                     </p>
                     <a href="#" class="read-more">Read More</a>
                 </div>
             </div>
         </div>
     </main>
-    <footer>
-        <p>&copy; 2024 Kelompok Kami. All rights reserved.</p>
-    </footer>
     <script>
         document.querySelectorAll('.read-more').forEach(button => {
             button.addEventListener('click', event => {

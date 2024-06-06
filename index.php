@@ -141,7 +141,7 @@ $is_login = isset($_SESSION['user_id']);
                 <h2>Quick Links</h2>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#read">Read</a></li>
                 </ul>
             </div>
             <div class="sec contactBx">
@@ -149,14 +149,17 @@ $is_login = isset($_SESSION['user_id']);
                 <ul class="info">
                     <li>
                         <span><i class="bx bxs-map"></i></span>
-                        <span>6444 London street <br />
-                            Brighton PA 33445 <br />
-                            Uk</span>
+                        <span>Indonesia <br />
+                            Sulawesi Utara<br />
+                            Manado</span>
                     </li>
                     <li>
                         <span><i class="bx bx-envelope"></i></span>
                         <p>
-                            <a href="mailto:codemyhobby9@gmail.com">Codemyhobby9@gmail.com</a>
+                            <a href="mailto:codemyhobby9@gmail.com">HeskiPranata@gmail.com</a>
+                            <a href="mailto:codemyhobby9@gmail.com">IrhamHamid@gmail.com</a>
+                            <a href="mailto:codemyhobby9@gmail.com">JoyTambuwun@gmail.com</a>
+                            <a href="mailto:codemyhobby9@gmail.com">arthurunsong01@gmail.com</a>
                         </p>
                     </li>
                 </ul>
