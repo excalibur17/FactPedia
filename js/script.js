@@ -65,12 +65,14 @@ function openModal(element) {
     var modalTitle = modal.querySelector(".modal-title");
     var modalDate = modal.querySelector(".modal-date");
     var modalDescription = modal.querySelector(".modal-description");
+    var modalAuthor = modal.querySelector(".modal-author");
 
     modalImg.src = element.getAttribute("data-image");
     modalCategory.textContent = element.getAttribute("data-category");
     modalTitle.textContent = element.getAttribute("data-title");
     modalDate.textContent = element.getAttribute("data-date");
     modalDescription.textContent = element.getAttribute("data-description");
+    modalAuthor.textContent = element.getAttribute("data-author");
 
     modal.style.display = "block";
 }
