@@ -222,6 +222,10 @@ main h2 {
     background: #e42214e1;
 }
 
+.btn-post{
+    min-width: 200px;
+    right: 0;
+}
 
 table {
     width: 100%;

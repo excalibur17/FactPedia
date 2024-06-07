@@ -70,7 +70,7 @@ $result_adm = $conn->query("SELECT * FROM trivias");
                                 <td id="col-content"><?php echo htmlspecialchars($row['content']); ?></td>
                                 <td><?php echo htmlspecialchars((new DateTime($row['created_at']))->format('Y-m-d')); ?></td>
                                 <td><?php echo htmlspecialchars($row['status']); ?></td>
-                                <td>
+                                <td class="btn-post">
                                     <button class="btn-action btn-blue" onclick="viewPost(<?php echo $row['id']; ?>)">View</button>
                                     <button class="btn-action btn-green" onclick="acceptPost(<?php echo $row['id']; ?>)">Accept</button>
                                     <button class="btn-action btn-yellow" onclick="editPost(<?php echo $row['id']; ?>)">Edit</button>
