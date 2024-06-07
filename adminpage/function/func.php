@@ -1,6 +1,16 @@
 <?php
 include 'connect.php';
 
+// Memulai sesi
+session_start();
+
+// Cek apakah pengguna sudah login
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    // Jika belum login, arahkan ke halaman login
+    header("Location: ../admin_loginpage/admin_login.php");
+    exit;
+}
+
 // Mengambil data yang masih berstatus pending untuk ditampilkan di post admin
 $sql = "SELECT * FROM trivias WHERE status = 'pending'";
 $result_adm = $conn->query($sql);
@@ -9,7 +19,6 @@ $result_adm = $conn->query($sql);
 $sqll = "SELECT * FROM users";
 $get_user = $conn->query($sqll);
 
-//Mengambil data dari db dan akan ditampilkan di dashboard
 // Mengambil data dari db dan akan ditampilkan di dashboard
 $show = "SELECT * FROM trivias";
 $get_data = $conn->query($show);
@@ -43,6 +52,7 @@ if ($result_tot_post->num_rows > 0) {
 } else {
     $total_posts = 0; 
 }
+
 function deleteUser($conn, $id) {
     $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
     $stmt->bind_param("i", $id);
@@ -66,4 +76,4 @@ function updateUser($conn, $id, $name, $email) {
     $stmt->execute();
     $stmt->close();
 }
-
+?>
