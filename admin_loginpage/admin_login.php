@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
+        $_SESSION['loggedin'] = true; // Set session login
         $_SESSION['user_id'] = $row['id'];
         header("Location: ../adminpage/dashboard.php");
         exit;

@@ -129,13 +129,13 @@ $is_login = isset($_SESSION['user_id']);
                         <img src="img/HESKI1.jpg" alt="">
                     </li>
                     <li>
-                        <a href="#"><i class="bx bxl-instagram"></i></a>
+                        <img src="img/irham.jpg" alt="">
                     </li>
                     <li>
-                        <a href="#"><i class="bx bxl-twitter"></i></a>
+                     <img src="img/JOY1.jpg" alt="">
                     </li>
                     <li>
-                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                        <img src="img/Arthur.jpg" alt="">
                     </li>
                 </ul>
             </div>
@@ -158,10 +158,7 @@ $is_login = isset($_SESSION['user_id']);
                     <li>
                         <span><i class="bx bx-envelope"></i></span>
                         <p>
-                            <a href="mailto:codemyhobby9@gmail.com">HeskiPranata@gmail.com</a>
-                            <a href="mailto:codemyhobby9@gmail.com">IrhamHamid@gmail.com</a>
-                            <a href="mailto:codemyhobby9@gmail.com">JoyTambuwun@gmail.com</a>
-                            <a href="mailto:codemyhobby9@gmail.com">arthurunsong01@gmail.com</a>
+                            <a href="mailto:factpedia@gmail.com">factpedia@gmail.com</a>
                         </p>
                     </li>
                 </ul>

@@ -120,6 +120,10 @@ $conn->close();
                         <option value="technology">Technology</option>
                         <option value="entertainment">Entertainment</option>
                         <option value="sports">Sports</option>
+                        <option value="anime">Anime</option>
+                        <option value="movies">Movies</option>
+                        <option value="food">Food</option>
+                        <option value="nature">Nature</option>
                     </select>
                 </div>
                 <div class="form-group">

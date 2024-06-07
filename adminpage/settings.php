@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Settings</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <header>
@@ -53,11 +53,6 @@
             </section>
         </main>
     </div>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Web Artikel. All rights reserved.</p>
-        </div>
-    </footer>
     <script>
         document.getElementById('navToggle').addEventListener('click', function() {
             document.getElementById('navMenu').classList.toggle('show');

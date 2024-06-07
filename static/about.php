@@ -153,8 +153,10 @@ header {
                              Favorite Club: Psm Makassar<br>
                                <!-- Icon media sosial -->
                                <i class="fab fa-facebook"></i>
-                               <i class="fab fa-twitter"></i>
-                               <a href="https:ngoni p ig">
+                               <a href="https://x.com/Heskiix?t=0-iPWbEmC9h11oT2Zw3yqQ&s=09">
+                                <i class="fab fa-x-twitter"></i>
+                               </a>
+                               <a href="https://www.instagram.com/heskiprnt?igsh=anFkdnpsYnkzYWNz">
                                     <i class="fab fa-instagram"></i>
                                </a>
                         </span>
@@ -178,8 +180,8 @@ header {
                              Favorite Club: Fc Barcelona<br>
                                <!-- Icon media sosial -->
                                <i class="fab fa-facebook"></i>
-                               <i class="fab fa-twitter"></i>
-                               <a href="https:ngoni p ig">
+                               <i class="fab fa-x-twitter"></i>
+                               <a href="https://www.instagram.com/irhamid._?igsh=MWI0NDZxNmM5dnozMw==">
                                     <i class="fab fa-instagram"></i>
                                </a>
                         </span>
@@ -202,9 +204,11 @@ header {
                              Hobby: Cooking <br>
                              Favorite Club: Sulut United<br>
                                <!-- Icon media sosial -->
-                               <i class="fab fa-facebook"></i>
-                               <i class="fab fa-twitter"></i>
-                               <a href="https:ngoni p ig">
+                                <a href="https://www.facebook.com/joy.tambuwun.7/">
+                                    <i class="fab fa-facebook"></i>
+                                </a>                             
+                               <i class="fab fa-x-twitter"></i>
+                               <a href="https://www.instagram.com/joyyzzz_/">
                                     <i class="fab fa-instagram"></i>
                                </a>
 
@@ -229,7 +233,7 @@ header {
                              Favorite Club: Manchester City <br>
                                <!-- Icon media sosial -->
                                <i class="fab fa-facebook"></i>
-                               <i class="fab fa-twitter"></i>
+                               <i class="fab fa-x-twitter"></i>
                                <a href="https://www.instagram.com/arthhhzzz_/#">
                                     <i class="fab fa-instagram"></i>
                                </a>

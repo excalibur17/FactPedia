@@ -4,6 +4,13 @@ require './function/func.php';
 
 // Fetch users data
 $get_user = $conn->query("SELECT * FROM users");
+
+// Cek apakah pengguna sudah login
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    // Jika belum login, arahkan ke halaman login
+    header("Location: ../admin_loginpage/admin_login.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
