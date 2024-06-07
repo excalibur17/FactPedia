@@ -2,7 +2,7 @@
 include 'connect.php';
 
 // Fetch articles from the database
-$sql = "SELECT * FROM articles ORDER BY created_at DESC";
+$sql = "SELECT * FROM trivias ORDER BY created_at DESC";
 $result = $conn->query($sql);
 ?>
 
@@ -39,12 +39,12 @@ $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                         echo "<div class='article-item'>";
-                        if ($row["image_path"]) {
-                            echo "<div class='article-image'><img src='" . $row["image_path"] . "' alt='" . $row["title"] . "'></div>";
+                        if ($row["file_path"]) {
+                            echo "<div class='article-image'><img src='" . $row["file_path"] . "' alt='" . $row["title"] . "'></div>";
                         }
                         echo "<div class='article-content'>";
                         echo "<h3>" . $row["title"] . "</h3>";
-                        echo "<p>" . $row["content"] . "</p>";
+                        echo "<pre>" . $row["content"] . "</pre>";
                         echo "</div>";
                         echo "</div>";
                     }
@@ -69,3 +69,4 @@ $result = $conn->query($sql);
 <?php
 $conn->close();
 ?>
+

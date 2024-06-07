@@ -43,5 +43,27 @@ if ($result_tot_post->num_rows > 0) {
 } else {
     $total_posts = 0; 
 }
+function deleteUser($conn, $id) {
+    $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->close();
+}
 
+function getUserById($conn, $id) {
+    $stmt = $conn->prepare("SELECT * FROM users WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
+    $stmt->close();
+    return $user;
+}
+
+function updateUser($conn, $id, $name, $email) {
+    $stmt = $conn->prepare("UPDATE users SET name = ?, email = ? WHERE id = ?");
+    $stmt->bind_param("ssi", $name, $email, $id);
+    $stmt->execute();
+    $stmt->close();
+}
 

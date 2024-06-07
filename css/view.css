@@ -13,14 +13,14 @@ a {
 }
 
 .container {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #007BFF, #0056b3);
+    background: linear-gradient(to right, #8e44ad, #3498db);
     color: white;
     padding: 10px 0;
     position: sticky;
@@ -92,6 +92,7 @@ main {
     margin-bottom: 10px;
     border-bottom: 1px solid #ccc;
     transition: background 0.3s;
+    overflow: hidden;
 }
 
 .article-image img {
@@ -109,14 +110,16 @@ main {
     font-size: 1.2em;
 }
 
-.article-content p {
+.article-content pre {
     font-size: 1em;
     margin: 5px 0 0;
+    white-space: pre-wrap; /* Ensure long content wraps */
 }
 
 .article-item:hover {
     background: #f0f0f0;
 }
+
 
 /* Add Article Button */
 .add-article-button {

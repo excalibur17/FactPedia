@@ -2,7 +2,7 @@
 require 'proses/connect.php';
 session_start();
 
-$query = "SELECT * FROM trivias ORDER BY id DESC LIMIT 9";
+$query = "SELECT * FROM trivias WHERE status='approved' ORDER BY id DESC LIMIT 9";
 $result = mysqli_query($conn, $query);
 
 
@@ -20,7 +20,7 @@ $is_login = isset($_SESSION['user_id']);
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trend Blogger</title>
+    <title>FactPedia</title>
     <!-- Box-icon -->
     <script src="https://kit.fontawesome.com/b6fbae5a8d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css" />
@@ -34,7 +34,7 @@ $is_login = isset($_SESSION['user_id']);
                 <a href="#home">Home</a>
                 <a href="#read">Read</a>
                 <a href="#" class="write-link">Write</a>
-                <a href="">About</a>
+                <a href="static/about.php">About</a>
                 <a href="proses/login.php" class="login">Login</a>
             </div>
         </div>
@@ -121,10 +121,8 @@ $is_login = isset($_SESSION['user_id']);
             <div class="sec aboutus">
                 <h2>About Us</h2>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
-                    quisquam minus quo illo numquam vel incidunt pariatur hic commodi
-                    expedita tempora praesentium at iure fugiat ea, quam laborum aperiam
-                    veritatis.
+                    FactPedia adalah sebuah web yang di rancang oleh empat pemuda hebat, tampan, pemberani, rajin menabung, tidak sombong, dan bermartabat.
+                    jika tertarik dengan kami, silahkan <a href="static/about.php">klik disini</a>.
                 </p>
                 <ul class="sci">
                     <li>
@@ -145,7 +143,7 @@ $is_login = isset($_SESSION['user_id']);
                 <h2>Quick Links</h2>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#read">Read</a></li>
                 </ul>
             </div>
             <div class="sec contactBx">
@@ -153,14 +151,17 @@ $is_login = isset($_SESSION['user_id']);
                 <ul class="info">
                     <li>
                         <span><i class="bx bxs-map"></i></span>
-                        <span>6444 London street <br />
-                            Brighton PA 33445 <br />
-                            Uk</span>
+                        <span>Indonesia <br />
+                            Sulawesi Utara<br />
+                            Manado</span>
                     </li>
                     <li>
                         <span><i class="bx bx-envelope"></i></span>
                         <p>
-                            <a href="mailto:codemyhobby9@gmail.com">Codemyhobby9@gmail.com</a>
+                            <a href="mailto:codemyhobby9@gmail.com">HeskiPranata@gmail.com</a>
+                            <a href="mailto:codemyhobby9@gmail.com">IrhamHamid@gmail.com</a>
+                            <a href="mailto:codemyhobby9@gmail.com">JoyTambuwun@gmail.com</a>
+                            <a href="mailto:codemyhobby9@gmail.com">arthurunsong01@gmail.com</a>
                         </p>
                     </li>
                 </ul>
