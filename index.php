@@ -35,7 +35,11 @@ $is_login = isset($_SESSION['user_id']);
                 <a href="#read">Read</a>
                 <a href="#" class="write-link">Write</a>
                 <a href="static/about.php">About</a>
-                <a href="proses/login.php" class="login">Login</a>
+                <?php if ($is_login) : ?>
+                    <a href="proses/logout.php" class="login">Logout</a>
+                <?php else : ?>
+                    <a href="proses/login.php" class="login">Login</a>
+                <?php endif ?>
             </div>
         </div>
     </header>
@@ -103,7 +107,7 @@ $is_login = isset($_SESSION['user_id']);
         ?>
     </section>
 
-    
+
 
     <section class="write container" id="write">
         <div class="write-imgBx">
@@ -132,7 +136,7 @@ $is_login = isset($_SESSION['user_id']);
                         <img src="img/irham.jpg" alt="">
                     </li>
                     <li>
-                     <img src="img/JOY1.jpg" alt="">
+                        <img src="img/JOY1.jpg" alt="">
                     </li>
                     <li>
                         <img src="img/Arthur.jpg" alt="">

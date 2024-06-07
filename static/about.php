@@ -1,3 +1,9 @@
+<?php
+require '../proses/connect.php';
+session_start();
+
+$is_login = isset($_SESSION['user_id']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,8 +136,12 @@ header {
                 <a href="../index.php">Home</a>
                 <a href="../index.php#read">Read</a>
                 <a href="#" class="write-link" id="write-link">Write</a>
-                <a href="../static/about.php">About</a>
-                <a href="../proses/login.php" class="login">Login</a>
+                <a href="#">About</a>
+                <?php if ($is_login) : ?>
+                    <a href="../proses/logout.php" class="login">Logout</a>
+                <?php else : ?>
+                    <a href="../proses/login.php" class="login">Login</a>
+                <?php endif ?>
             </div>
         </div>
     </header>
