@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$message = ""; // Initialize the message variable
+$errors = []; // Array untuk menyimpan pesan kesalahan
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = $_POST['title'];
@@ -15,12 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $content = $_POST['content'];
     $user_id = $_SESSION['user_id'];
 
-    //Mendapatkan nama dari user dengan id
+    // Mendapatkan nama dari user dengan id
     $sql_query = "SELECT * FROM users WHERE id = $user_id";
     $result = $conn->query($sql_query);
     if ($result->num_rows > 0) {
         $user_data = $result->fetch_assoc();
-        $author = $user_data['name']; 
+        $author = $user_data['name'];
     } else {
         $author = "Unknown";
     }
@@ -33,35 +33,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Cek apakah file adalah gambar asli atau tidak
     $check = getimagesize($_FILES["file"]["tmp_name"]);
-    if ($check !== false) {
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
+    if ($check === false) {
+        $errors[] = "File is not an image.";
         $uploadOk = 0;
     }
 
     // Cek apakah file sudah ada
     if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
+        $errors[] = "Sorry, file already exists.";
         $uploadOk = 0;
     }
 
     // Cek ukuran file
     if ($_FILES["file"]["size"] > 500000) {
-        echo "Sorry, your file is too large.";
+        $errors[] = "Sorry, your file is too large.";
         $uploadOk = 0;
     }
 
     // Hanya izinkan format file tertentu
     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $errors[] = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
     }
 
     // Cek apakah $uploadOk bernilai 0 karena kesalahan
     if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-        // Jika semuanya baik-baik saja, coba upload file
+        $errors[] = "Sorry, your file was not uploaded.";
     } else {
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
             $sql = "INSERT INTO trivias (user_id, author, title, category, content, file_path, status)
@@ -69,21 +66,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($conn->query($sql) === TRUE) {
                 echo "<script>
-                        console.log('New record has been added');
                         window.location.href = '../index.php';
                     </script>";
                 exit();
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                $errors[] = "Error: " . $sql . "<br>" . $conn->error;
             }
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            $errors[] = "Sorry, there was an error uploading your file.";
         }
     }
 }
 
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -92,6 +89,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Article</title>
+    <script src="https://kit.fontawesome.com/b6fbae5a8d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/upload.css">
 </head>
 
@@ -143,6 +141,18 @@ $conn->close();
                     </label>
                 </div>
                 <p><strong>Remember:</strong> Before your trivia appears on our page, we need to review the content you upload.</p>
+                <!-- Tampilkan pesan kesalahan di bawah form -->
+                <?php if (!empty($errors)) : ?>
+                    <div class="error-messages">
+                        
+                        <div>
+                            <?php foreach ($errors as $error) : ?>
+                                <p><i class="fas fa-exclamation-circle"></i> <?php echo $error; ?></p>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+              
                 <div class="form-btn">
                     <button type="button" class="btn btn-secondary" onclick="redirectToIndex()">Cancel</button>
                     <button type="submit" class="btn btn-primary">Upload</button>

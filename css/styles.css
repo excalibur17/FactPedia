@@ -323,10 +323,6 @@ header.shadow .logo{
     border: 2px solid #512da8;;
 }
 
-.profile-name{
-    font-size: .8rem;
-    font-weight: 500;
-}
 
 
 .modal {
@@ -432,6 +428,7 @@ font-size: 30px;
 .profile-name {
     font-size: 0.9rem;
     font-weight: 500;
+    white-space: nowrap;
 }
 .write {
     display: flex;
