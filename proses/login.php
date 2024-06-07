@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if (password_verify($hashed_password, $row['password'])) {
             $_SESSION['user_id'] = $row['id'];
-            header("Location: upload.php");
+            header("Location: ../index.php");
         } else {
             echo "Invalid password";
         }

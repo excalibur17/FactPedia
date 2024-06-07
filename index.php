@@ -103,6 +103,8 @@ $is_login = isset($_SESSION['user_id']);
         ?>
     </section>
 
+    
+
     <section class="write container" id="write">
         <div class="write-imgBx">
             <img src="img/colab.jpg" alt="" class="fitBg" />
@@ -126,7 +128,7 @@ $is_login = isset($_SESSION['user_id']);
                 </p>
                 <ul class="sci">
                     <li>
-                        <a href="#"><i class="bx bxl-facebook"></i></a>
+                        <img src="img/HESKI1.jpg" alt="">
                     </li>
                     <li>
                         <a href="#"><i class="bx bxl-instagram"></i></a>
